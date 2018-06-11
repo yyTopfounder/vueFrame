@@ -1,5 +1,4 @@
-body{
-    color: yellow;
-    background-image: url("../img/1.png");
-    display: flex;
+body {
+  color: red;
+  background-image: url('../img/done.svg')
 }
