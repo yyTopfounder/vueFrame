@@ -23,7 +23,9 @@ const clientBasePlugin = [
       NODE_ENV: isDev? "'development'":"'production'"
     }
   }),
-  new HtmlWebpackPlugin()
+  new HtmlWebpackPlugin({
+    template: path.join(__dirname, "../src/index.html")
+  })
 ];
 
 if(isDev){

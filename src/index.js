@@ -6,6 +6,14 @@ import "./assets/styles/global.styl"
 const root = document.createElement("div");
 document.body.appendChild(root);
 
-new Vue({
+/*new Vue({
   render: (h) => h(App)
-}).$mount(root);
+}).$mount(root);*/
+
+new Vue({
+  el: "#app",
+  template: "<App />",
+  components: {
+    App
+  }
+})
