@@ -11,11 +11,20 @@ const config = {
     filename: "bundle.[hash:8].js",
     path: path.join(__dirname, "../dist")
   },
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js',
+    }
+  },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: "vue-loader"
+        loader: "vue-loader",
+        options: {
+          modules: true,
+          localIdentName: '[hash:base64:5]'
+        }
       },
       {
         test: /\.jsx$/,
@@ -32,7 +41,7 @@ const config = {
           loader: "url-loader",
           options: {
             limit:1024,
-            name: "[name].[ext]"
+            name: "assets/[name].[hash:8].[ext]"
           }
         }]
       }

@@ -4,7 +4,7 @@
     </header>
 </template>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
     .main-header{
         text-align center
         h1{

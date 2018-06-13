@@ -69,7 +69,7 @@
     }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
     .real-app{
         width 600px
         margin 0 auto
