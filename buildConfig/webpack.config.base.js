@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const createVueLoaderOptions = require("./vueloader.config")
 
 const isDev = process.env.NODE_ENV == "development";
 
@@ -21,10 +22,11 @@ const config = {
       {
         test: /\.vue$/,
         loader: "vue-loader",
-        options: {
-          modules: true,
-          localIdentName: '[hash:base64:5]'
-        }
+        options: createVueLoaderOptions(isDev)
+      },
+      {
+        test: /\.css$/,
+        use:["style-loader","css-loader"]
       },
       {
         test: /\.jsx$/,
