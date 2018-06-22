@@ -1,6 +1,8 @@
 const path = require("path");
 const webpack = require("webpack");
-const createVueLoaderOptions = require("./vueloader.config")
+const createVueLoaderOptions = require("./vueloader.config");
+/*const vuxLoader = require("vux-loader");*/
+
 
 const isDev = process.env.NODE_ENV == "development";
 
@@ -26,7 +28,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        use:["style-loader","css-loader"]
+        use:["style-loader","css-loader","postcss-loader"]
       },
       {
         test: /\.jsx$/,
@@ -43,7 +45,7 @@ const config = {
           loader: "url-loader",
           options: {
             limit:1024,
-            name: "assets/[name].[hash:8].[ext]"
+            name: "[name].[hash:8].[ext]"
           }
         }]
       }
@@ -51,4 +53,4 @@ const config = {
   }
 };
 
-module.exports = config;
+module.exports = config

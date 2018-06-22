@@ -39,12 +39,7 @@ if(isDev){
           use: [
             "vue-style-loader",
             'css-loader',
-            {
-              loader: "postcss-loader",
-              options: {
-                source:true
-              }
-            },
+            "postcss-loader",
             "stylus-loader"
           ]
         }
@@ -93,4 +88,4 @@ if(isDev){
   })
 }
 
-module.exports = clientConfig;
+module.exports = clientConfig

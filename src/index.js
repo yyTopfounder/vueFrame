@@ -1,18 +1,20 @@
 import Vue from "vue"
-import App from "./app.vue"
+import homePage from "./zmyd/homePage/homePage.vue"
+import VueRouter from "vue-router"
+/*import XHeader from "vux"*/
 
 import "./assets/styles/global.styl"
 
-/*const root = document.createElement("div");
-document.body.appendChild(root);
-new Vue({
-  render: (h) => h(App)
-}).$mount(root);*/
+const routes = [
+  {path: "/",redirect:"/home"},
+  {path: "/home",component: homePage}
+];
+const router = new VueRouter({routes});
 
+Vue.use(VueRouter);
 new Vue({
-  el: "#app",
-  template: "<App></App>",
-  components: {
-    App
-  }
-});
+  router
+  /*components:{
+    XHeader
+  }*/
+}).$mount('#zmyd');
