@@ -1,7 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const createVueLoaderOptions = require("./vueloader.config");
-/*const vuxLoader = require("vux-loader");*/
+const vuxLoader = require("vux-loader");
 
 
 const isDev = process.env.NODE_ENV == "development";
@@ -53,4 +53,6 @@ const config = {
   }
 };
 
-module.exports = config
+module.exports = vuxLoader.merge(config,{
+  plugins:["vux-ui"]
+})
