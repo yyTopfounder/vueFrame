@@ -1,6 +1,6 @@
 {
   "presets": ["env"],
-  "plugins": ["transform-vue-jsx",["component", [
+  "plugins": ["transform-vue-jsx","syntax-dynamic-import",["component", [
     {
       "libraryName": "mint-ui",
       "style": true
