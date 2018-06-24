@@ -1,28 +1,43 @@
 <template>
-    <div id="homePageContrain">
-        <div class="ionicContrain">
-            <div class="ionRow" v-for="aryItem in ionicAry">
-                <div class="ionItem" v-for="ionic in aryItem" >
-                    <div>
-                        <img src="../../assets/img/icon-01.png" alt="">
+    <div id="homePage">
+        <div>
+        <mt-header title="首页">
+            <router-link to="/" slot="left">
+                <mt-button icon="back">返回</mt-button>
+            </router-link>
+            <mt-button icon="more" slot="right"></mt-button>
+        </mt-header>
+        </div>
+        <div id="homePageContrain">
+            <div class="ionicContrain">
+                <div class="ionRow" v-for="aryItem in ionicAry">
+                    <div class="ionItem" v-for="ionic in aryItem" >
+                        <div>
+                            <img src="../../assets/img/icon-01.png" alt="">
+                        </div>
+                        <span>{{ionic}}</span>
                     </div>
-                    <span>{{ionic}}</span>
                 </div>
             </div>
-        </div>
-        <div class="inforContrain">
-            <div class="inforTitle">今日计划内任务</div>
-            <div class="inforContent">
-                <div>市场检查:</div>
-                <div>共{{marketInspect.sum}}户,已检查{{marketInspect.inspect}}户。</div>
+            <div class="inforContrain">
+                <div class="inforTitle">今日计划内任务</div>
+                <div class="inforContent">
+                    <div>市场检查:</div>
+                    <div>共{{marketInspect.sum}}户,已检查{{marketInspect.inspect}}户。</div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 <style lang="stylus" module>
-    #homePageContrain{
+    #homePage{
         width 100%
         height 100%
+        display flex
+        flex-direction column
+    }
+    #homePageContrain{
+        flex-grow 1
         display flex;
         justify-content space-between
         flex-direction column
@@ -51,7 +66,7 @@
             }
         }
         div.inforContrain{
-            height 30%;
+            height 150px;
         }
     }
 
@@ -77,6 +92,7 @@
 </style>
 <script>
     import axios from "axios"
+    import { Header } from 'mint-ui';
     export default {
       data(){
         return {
@@ -94,6 +110,9 @@
         axios.get("http://localhost:3000/marketInspect").then((response)=>{
           this.marketInspect = response.data
         })
+      },
+      components:{
+        Header
       }
     }
 </script>

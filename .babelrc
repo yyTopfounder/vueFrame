@@ -1,4 +1,9 @@
 {
   "presets": ["env"],
-  "plugins": ["transform-vue-jsx"]
+  "plugins": ["transform-vue-jsx",["component", [
+    {
+      "libraryName": "mint-ui",
+      "style": true
+    }
+  ]]]
 }
