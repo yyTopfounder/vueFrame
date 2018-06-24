@@ -1,21 +1,18 @@
 <template>
     <div id="homePage">
         <div>
-        <mt-header title="首页">
-            <router-link to="/" slot="left">
-                <mt-button icon="back">返回</mt-button>
-            </router-link>
-            <mt-button icon="more" slot="right"></mt-button>
-        </mt-header>
+        <mt-header title="首页"></mt-header>
         </div>
         <div id="homePageContrain">
             <div class="ionicContrain">
                 <div class="ionRow" v-for="aryItem in ionicAry">
                     <div class="ionItem" v-for="ionic in aryItem" >
                         <div>
-                            <img src="../../assets/img/icon-01.png" alt="">
+                            <router-link :to="ionic.url">
+                                <img src="../../assets/img/icon-01.png" alt="">
+                            </router-link>
                         </div>
-                        <span>{{ionic}}</span>
+                        <span>{{ionic.name}}</span>
                     </div>
                 </div>
             </div>
@@ -97,10 +94,10 @@
       data(){
         return {
           ionicAry:[
-            ["ionic1","ionic2","ionic3","ionic4"],
-            ["ionic5","ionic6","ionic7","ionic8"],
-            ["ionic9","ionic10","ionic11","ionic12"],
-            ["ionic13","ionic14","ionic15","ionic16"]
+            [{url:"/marketInspect",name:"ionic1"},{url:"",name:"ionic2"},{url:"",name:"ionic3"},{url:"",name:"ionic4"}],
+            [{url:"",name:"ionic5"},{url:"",name:"ionic6"},{url:"",name:"ionic7"},{url:"",name:"ionic8"}],
+            [{url:"",name:"ionic9"},{url:"",name:"ionic10"},{url:"",name:"ionic11"},{url:"",name:"ionic12"}],
+            [{url:"",name:"ionic13"},{url:"",name:"ionic14"},{url:"",name:"ionic15"},{url:"",name:"ionic16"}]
           ],
           marketInspect:{}
         }
