@@ -1,9 +1,13 @@
 <template>
     <div id="sideNavContrain">
         <div class="navContrain">
-            <div class="navItem" v-for="navItem in navAry">{{navItem}}</div>
+                <div class="navItem" v-for="navItem in navAry">
+                    <router-link :to="navItem.url" >{{navItem.name}}</router-link>
+                </div>
         </div>
-        <div class="contentContrain"></div>
+        <div class="contentContrain">
+            <router-view ></router-view>
+        </div>
     </div>
 </template>
 <style lang="stylus">
@@ -24,6 +28,7 @@
         }
         .contentContrain{
             height 100%
+            flex-grow 1
         }
     }
 </style>
@@ -31,7 +36,14 @@
     export default {
       data(){
         return {
-          navAry:["nav1","nav1","nav1","nav1","nav1","nav1"]
+          navAry:[
+            {url:"/nav1", name: "nav1"},
+            {url:"/nav2", name: "nav2"},
+            {url:"", name: "nav3"},
+            {url:"", name: "nav4"},
+            {url:"", name: "nav5"},
+            {url:"", name: "nav6"}
+          ]
         }
       }
     }

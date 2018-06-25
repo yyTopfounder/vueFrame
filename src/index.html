@@ -8,7 +8,9 @@
 </head>
 <body>
 <div id="zmyd" style="height: 100%">
-    <router-view></router-view>
+    <transition name="slide-fade">
+        <router-view></router-view>
+    </transition>
 </div>
 </body>
 </html>
