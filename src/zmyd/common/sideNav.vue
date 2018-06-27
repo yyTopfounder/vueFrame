@@ -39,10 +39,7 @@
           navAry:[
             {url:"/nav1", name: "nav1"},
             {url:"/nav2", name: "nav2"},
-            {url:"", name: "nav3"},
-            {url:"", name: "nav4"},
-            {url:"", name: "nav5"},
-            {url:"", name: "nav6"}
+            {url:"/nav3", name: "nav3"}
           ]
         }
       }

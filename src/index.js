@@ -6,6 +6,7 @@ import MintUI from 'mint-ui'
 import store from "./store/store"
 import nav1 from './zmyd/marketInspect/nav1/nav1.vue'
 import nav2 from "./zmyd/marketInspect/nav2/nav2.vue"
+import nav3 from "./zmyd/marketInspect/nav3/nav3.vue"
 
 import "./assets/styles/global.styl"
 import 'mint-ui/lib/style.css'
@@ -20,7 +21,8 @@ const routes = [
     children: [
       {path: "/", redirect: "/nav1"},
       {path: "/nav1", component: nav1},
-      {path: "/nav2", component: nav2}
+      {path: "/nav2", component: nav2},
+      {path: "/nav3", component: nav3}
     ]
   }
 ];

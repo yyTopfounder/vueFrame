@@ -7,11 +7,17 @@ const isDev = process.env.NODE_ENV ==="development"
 const store = new Vuex.Store({
   strict: isDev,
   state:{
-    count: 0
+    count: 0,
+    testAry:[1,2,3,4,5,6]
   },
   mutations:{
-    updateCount:(state,num) =>{
-      state.count = num;
+    updateCount:state =>{
+      state.count++;
+    }
+  },
+  getters:{
+    greater5:state =>{
+      return state.testAry.filter(item => item>5).length
     }
   }
 })
