@@ -33,6 +33,13 @@ const router = new VueRouter({
 
 Vue.use(VueRouter);
 Vue.use(MintUI);
+Vue.component("async-component",(resolve,reject)=>{
+  setTimeout(()=>{
+    resolve({
+      template:"<div>I am a async-component</div>"
+    })
+  },3000)
+});
 new Vue({
   router,
   store

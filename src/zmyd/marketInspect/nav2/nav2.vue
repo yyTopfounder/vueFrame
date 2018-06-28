@@ -8,6 +8,10 @@
                 <div>slot:{{slotProps.scopeTest}}</div>
             </template>
         </slot-test>
+        <div>异步组件测试</div>
+        <async-component></async-component>
+        <div>组件循环测试</div>
+        <a-component></a-component>
     </div>
 </template>
 <style lang="stylus">
@@ -17,6 +21,7 @@
 </style>
 <script>
     import slotTest from "../../common/slotTest.vue"
+    import aComponent from "../../common/a.vue"
     export default {
         data(){
           return{
@@ -24,7 +29,8 @@
           }
         },
         components:{
-          slotTest
+          slotTest,
+          aComponent
         }
     }
 </script>
